@@ -69,12 +69,7 @@ if __name__ == "__main__":
         parser = create_parser()
         params = parser.parse_args(sys.argv[1:])
 
-        if params.location and params.id:
-            logging.debug("[-]GET data by id...(Two params Specified !)")
-
-            params_by_id = {"id": params.id, "appid": API_KEY}
-            weather_request(params_by_id)
-        elif params.id:
+        if params.id:
             logging.debug("[-]GET data by id...")
 
             params_by_id = {"id": params.id, "appid": API_KEY}
