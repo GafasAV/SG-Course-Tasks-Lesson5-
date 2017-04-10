@@ -41,18 +41,3 @@ class TextProto(object):
     def to_json(string):
         msg = string.split("<end>")[0]
         return json.loads(msg)
-
-
-if __name__ == "__main__":
-    name = str(input("Name: "))
-    msg = str(input("Msg: "))
-    msg = TextProto(name, msg)
-    some_t = msg.create()
-
-    print("Some text: " + some_t)
-
-    js = TextProto.to_json(some_t)
-    print(type(js))
-    print(js["name"])
-    print(js["msg"])
-    print(js["to"])
